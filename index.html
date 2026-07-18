@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fleet Dashboard — Backup</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #c9d1d9; --muted: #8b949e; --accent: #58a6ff;
+      --clean: #3fb950; --ahead: #d29922; --behind: #58a6ff;
+      --dirty: #f85149; --missing: #8b949e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 24px; background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 14px; line-height: 1.5;
+    }
+    header { margin-bottom: 24px; }
+    h1 { margin: 0 0 4px; font-size: 22px; font-weight: 600; }
+    .meta { color: var(--muted); font-size: 12px; }
+    .meta a { color: var(--accent); text-decoration: none; }
+    .summary {
+      display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap;
+    }
+    .summary-chip {
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 8px 14px; border-radius: 6px; font-size: 13px;
+    }
+    .summary-chip strong { font-size: 18px; margin-right: 6px; }
+    .columns {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 1100px) { .columns { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px)  { .columns { grid-template-columns: 1fr; } }
+    .column {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 12px; min-height: 200px;
+    }
+    .column h2 {
+      margin: 0 0 12px; font-size: 13px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .column h2 .count {
+      background: var(--border); color: var(--text);
+      padding: 1px 8px; border-radius: 10px; font-size: 11px;
+    }
+    .column[data-health="clean"]   h2 { color: var(--clean); }
+    .column[data-health="ahead"]   h2 { color: var(--ahead); }
+    .column[data-health="behind"]  h2 { color: var(--behind); }
+    .column[data-health="dirty"]   h2 { color: var(--dirty); }
+    .column[data-health="missing"] h2 { color: var(--missing); }
+    .card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 6px; padding: 10px; margin-bottom: 8px;
+      font-size: 12px;
+    }
+    .card .repo { font-weight: 600; color: var(--text); word-break: break-all; }
+    .card .machine { color: var(--muted); font-size: 11px; margin-top: 2px; }
+    .card .branch {
+      display: inline-block; background: var(--surface);
+      border: 1px solid var(--border); padding: 1px 6px;
+      border-radius: 4px; font-size: 11px; margin-top: 6px;
+      max-width: 100%; overflow: hidden; text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .card .commit {
+      color: var(--muted); font-size: 11px; margin-top: 4px;
+      font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .card .badges { margin-top: 6px; }
+    .badge {
+      display: inline-block; padding: 1px 6px; border-radius: 3px;
+      font-size: 10px; margin-right: 4px; font-weight: 600;
+    }
+    .badge.ahead  { background: rgba(210, 153, 34, 0.2); color: var(--ahead); }
+    .badge.behind { background: rgba(88, 166, 255, 0.2); color: var(--behind); }
+    .badge.dirty  { background: rgba(248, 81, 73, 0.2); color: var(--dirty); }
+    .refresh { float: right; }
+    .refresh button {
+      background: var(--surface); color: var(--text);
+      border: 1px solid var(--border); padding: 4px 12px;
+      border-radius: 6px; cursor: pointer; font-size: 12px;
+    }
+    .refresh button:hover { border-color: var(--accent); }
+    .error {
+      background: rgba(248, 81, 73, 0.1); border: 1px solid var(--dirty);
+      color: var(--dirty); padding: 12px 16px; border-radius: 6px; margin: 16px 0;
+    }
+    .empty { color: var(--muted); font-style: italic; font-size: 12px; padding: 8px 0; }
+    footer { margin-top: 32px; color: var(--muted); font-size: 11px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="refresh">
+      <button onclick="load()">↻ Refresh</button>
+    </div>
+    <h1>Fleet Dashboard <span style="color: var(--muted); font-weight: 400; font-size: 14px;">(GitHub Pages backup)</span></h1>
+    <div class="meta" id="meta">loading…</div>
+    <div class="summary" id="summary"></div>
+  </header>
+
+  <div id="error"></div>
+
+  <div class="columns" id="columns">
+    <div class="column" data-health="missing"><h2>Missing <span class="count" id="count-missing">0</span></h2><div id="cards-missing"></div></div>
+    <div class="column" data-health="dirty"><h2>Dirty <span class="count" id="count-dirty">0</span></h2><div id="cards-dirty"></div></div>
+    <div class="column" data-health="ahead"><h2>Ahead <span class="count" id="count-ahead">0</span></h2><div id="cards-ahead"></div></div>
+    <div class="column" data-health="behind"><h2>Behind <span class="count" id="count-behind">0</span></h2><div id="cards-behind"></div></div>
+    <div class="column" data-health="clean"><h2>Clean <span class="count" id="count-clean">0</span></h2><div id="cards-clean"></div></div>
+  </div>
+
+  <footer>
+    Backup dashboard for the Flowboard <code>github-fleet</code> board.
+    Data source: <code>dashboard.json</code> (committed by <code>fleet-flowboard-sync</code> on each machine every 15 min).
+    Primary dashboard: <a href="https://task-swarm-keeper.lovable.app" style="color: var(--accent);">task-swarm-keeper.lovable.app</a>.
+  </footer>
+
+<script>
+const HEALTH_ORDER = ['missing', 'dirty', 'ahead', 'behind', 'clean'];
+
+function escapeHtml(s) {
+  if (s == null) return '';
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function renderCard(c) {
+  const badges = [];
+  if (c.ahead && c.ahead !== '?' && c.ahead > 0)  badges.push(`<span class="badge ahead">ahead ${c.ahead}</span>`);
+  if (c.behind && c.behind !== '?' && c.behind > 0) badges.push(`<span class="badge behind">behind ${c.behind}</span>`);
+  if (c.dirty && c.dirty !== '?' && c.dirty > 0)   badges.push(`<span class="badge dirty">dirty ${c.dirty}</span>`);
+  return `
+    <div class="card">
+      <div class="repo">${escapeHtml(c.repo)}</div>
+      <div class="machine">${escapeHtml(c.machine_id)}</div>
+      ${c.branch ? `<div class="branch">${escapeHtml(c.branch)}</div>` : ''}
+      ${c.last_commit ? `<div class="commit">${escapeHtml(c.last_commit)}</div>` : ''}
+      ${badges.length ? `<div class="badges">${badges.join('')}</div>` : ''}
+    </div>
+  `;
+}
+
+async function load() {
+  const errEl = document.getElementById('error');
+  errEl.innerHTML = '';
+  document.getElementById('meta').textContent = 'loading…';
+
+  try {
+    // Cache-bust to always get fresh data
+    const res = await fetch(`dashboard.json?t=${Date.now()}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+
+    const cards = data.cards || [];
+    const generatedAt = data.generated_at || '?';
+    const machineCount = new Set(cards.map(c => c.machine_id)).size;
+
+    document.getElementById('meta').innerHTML =
+      `<span>${cards.length} cards across ${machineCount} machine(s)</span> · ` +
+      `<span>snapshot: ${escapeHtml(generatedAt)}</span> · ` +
+      `<a href="https://github.com/souvigna38/fleet-dashboard/blob/main/dashboard.json">source JSON</a>`;
+
+    // Summary chips
+    const counts = {clean:0, ahead:0, behind:0, dirty:0, missing:0};
+    cards.forEach(c => { if (counts[c.health] !== undefined) counts[c.health]++; });
+    document.getElementById('summary').innerHTML = HEALTH_ORDER.map(h =>
+      `<div class="summary-chip"><strong style="color: var(--${h})">${counts[h]}</strong>${h}</div>`
+    ).join('');
+
+    // Cards into columns
+    HEALTH_ORDER.forEach(h => {
+      const inCol = cards.filter(c => c.health === h)
+                         .sort((a, b) => (a.repo || '').localeCompare(b.repo || ''));
+      document.getElementById(`count-${h}`).textContent = inCol.length;
+      document.getElementById(`cards-${h}`).innerHTML =
+        inCol.length ? inCol.map(renderCard).join('') : '<div class="empty">—</div>';
+    });
+  } catch (e) {
+    errEl.innerHTML = `<div class="error">Failed to load dashboard.json: ${escapeHtml(e.message)}. ` +
+                      `The sync agent may not have committed a snapshot yet, or GitHub Pages is propagating.</div>`;
+    document.getElementById('meta').textContent = 'error';
+  }
+}
+
+load();
+// Auto-refresh every 5 minutes when the page is open
+setInterval(load, 5 * 60 * 1000);
+</script>
+</body>
+</html>
