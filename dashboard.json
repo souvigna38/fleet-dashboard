@@ -1,8 +1,8 @@
 {
   "board_id": "github-fleet",
-  "generated_at": "2026-07-24T17:22:42Z",
+  "generated_at": "2026-07-24T18:10:49Z",
   "generated_by": "temps-macbook-pro",
-  "count": 38,
+  "count": 19,
   "cards": [
     {
       "fleet_id": "temps-macbook-pro:CarInventory",
@@ -16,21 +16,7 @@
       "local_path": "/Users/temp/CarInventory",
       "health": "clean",
       "task_id": "925ab535-30a9-4323-885e-2330b7c34aba",
-      "updated_at": "2026-07-24T06:14:07.688492+00:00"
-    },
-    {
-      "fleet_id": "temps-macbook-pro:CarInventory",
-      "machine_id": "temps-macbook-pro",
-      "repo": "CarInventory",
-      "branch": "main",
-      "ahead": 0,
-      "behind": 0,
-      "dirty": 0,
-      "last_commit": "341fdea chore: sync local working state",
-      "local_path": "/Users/temp/CarInventory",
-      "health": "clean",
-      "task_id": "b760d498-4c61-4a43-98fe-2d1195d62881",
-      "updated_at": "2026-07-24T17:22:40.087459+00:00"
+      "updated_at": "2026-07-24T18:10:47.186128+00:00"
     },
     {
       "fleet_id": "temps-macbook-pro:FraudMarket",
@@ -44,21 +30,7 @@
       "local_path": "/Users/temp/FraudMarket",
       "health": "clean",
       "task_id": "0c339d03-76eb-434d-bc21-dcd04a396db9",
-      "updated_at": "2026-07-24T06:14:02.497174+00:00"
-    },
-    {
-      "fleet_id": "temps-macbook-pro:FraudMarket",
-      "machine_id": "temps-macbook-pro",
-      "repo": "FraudMarket",
-      "branch": "main",
-      "ahead": 0,
-      "behind": 0,
-      "dirty": 0,
-      "last_commit": "43fac0e feat: initial local commit with isolated host port configurations",
-      "local_path": "/Users/temp/FraudMarket",
-      "health": "clean",
-      "task_id": "24cb6eff-dfca-4aa4-98ae-98ec4ea04ec1",
-      "updated_at": "2026-07-24T17:22:36.380472+00:00"
+      "updated_at": "2026-07-24T18:10:42.82027+00:00"
     },
     {
       "fleet_id": "temps-macbook-pro:Spm2MaxClaw",
@@ -72,21 +44,7 @@
       "local_path": "/Users/temp/Spm2MaxClaw",
       "health": "clean",
       "task_id": "37d182e9-9001-4880-baef-8cc6d872f488",
-      "updated_at": "2026-07-24T06:14:05.676926+00:00"
-    },
-    {
-      "fleet_id": "temps-macbook-pro:Spm2MaxClaw",
-      "machine_id": "temps-macbook-pro",
-      "repo": "Spm2MaxClaw",
-      "branch": "main",
-      "ahead": 0,
-      "behind": 0,
-      "dirty": 0,
-      "last_commit": "a8b88fa chore: shift local host gateway port definitions to avoid cluster collisions",
-      "local_path": "/Users/temp/Spm2MaxClaw",
-      "health": "clean",
-      "task_id": "d2e46ce0-ca12-4c95-8b6b-a0425a1272e6",
-      "updated_at": "2026-07-24T17:22:38.42857+00:00"
+      "updated_at": "2026-07-24T18:10:45.425331+00:00"
     },
     {
       "fleet_id": "temps-macbook-pro:aether-core",
@@ -100,21 +58,7 @@
       "local_path": "/Users/temp/aether-lab/aether-core",
       "health": "clean",
       "task_id": "e2c28052-1131-448f-82a2-14137173a72c",
-      "updated_at": "2026-07-24T06:13:51.860636+00:00"
-    },
-    {
-      "fleet_id": "temps-macbook-pro:aether-core",
-      "machine_id": "temps-macbook-pro",
-      "repo": "aether-core",
-      "branch": "main",
-      "ahead": 0,
-      "behind": 0,
-      "dirty": 0,
-      "last_commit": "3d6caf5 feat: add launchd governor service and run_swarm_governor shell wrapper",
-      "local_path": "/Users/temp/aether-lab/aether-core",
-      "health": "clean",
-      "task_id": "96a9d3fa-2809-4f94-b448-185ae1c002d9",
-      "updated_at": "2026-07-24T17:22:28.804555+00:00"
+      "updated_at": "2026-07-24T18:10:35.331259+00:00"
     },
     {
       "fleet_id": "temps-macbook-pro:aether-lab",
@@ -128,21 +72,7 @@
       "local_path": "/Users/temp/aether-lab",
       "health": "clean",
       "task_id": "0ef6dd60-8297-44c2-99cb-26f7db57e635",
-      "updated_at": "2026-07-24T06:13:50.790756+00:00"
-    },
-    {
-      "fleet_id": "temps-macbook-pro:aether-lab",
-      "machine_id": "temps-macbook-pro",
-      "repo": "aether-lab",
-      "branch": "main",
-      "ahead": 0,
-      "behind": 0,
-      "dirty": 0,
-      "last_commit": "168488a docs: add Ubuntu Intel zero-to-prod guide",
-      "local_path": "/Users/temp/aether-lab",
-      "health": "clean",
-      "task_id": "e8bfd208-c723-4f1b-acb1-3466ef01ab6d",
-      "updated_at": "2026-07-24T17:22:28.285159+00:00"
+      "updated_at": "2026-07-24T18:10:34.526779+00:00"
     },
     {
       "fleet_id": "temps-macbook-pro:autoresearch",
@@ -156,21 +86,7 @@
       "local_path": "/Users/temp/warehouse-flow/autoresearch",
       "health": "clean",
       "task_id": "e7a176f1-3445-45f9-aca9-6ca7f48b6a5d",
-      "updated_at": "2026-07-24T06:14:09.529653+00:00"
-    },
-    {
-      "fleet_id": "temps-macbook-pro:autoresearch",
-      "machine_id": "temps-macbook-pro",
-      "repo": "autoresearch",
-      "branch": "main",
-      "ahead": 0,
-      "behind": 0,
-      "dirty": 0,
-      "last_commit": "afbe655 chore: ignore third-party karpathy_autoresearch clone (fetch upstream directly)",
-      "local_path": "/Users/temp/warehouse-flow/autoresearch",
-      "health": "clean",
-      "task_id": "87fee671-b052-4a0e-b0e9-c63402d02b23",
-      "updated_at": "2026-07-24T17:22:41.481746+00:00"
+      "updated_at": "2026-07-24T18:10:48.812019+00:00"
     },
     {
       "fleet_id": "temps-macbook-pro:clawd",
@@ -184,21 +100,7 @@
       "local_path": "/Users/temp/clawd",
       "health": "clean",
       "task_id": "d557860d-03c4-4f42-9a9e-c3f44276e447",
-      "updated_at": "2026-07-24T06:14:08.650897+00:00"
-    },
-    {
-      "fleet_id": "temps-macbook-pro:clawd",
-      "machine_id": "temps-macbook-pro",
-      "repo": "clawd",
-      "branch": "main",
-      "ahead": 0,
-      "behind": 0,
-      "dirty": 0,
-      "last_commit": "e8e925e chore: initial commit of local working state",
-      "local_path": "/Users/temp/clawd",
-      "health": "clean",
-      "task_id": "9cafb45a-2541-4efc-922e-8a7ab1adc877",
-      "updated_at": "2026-07-24T17:22:40.921774+00:00"
+      "updated_at": "2026-07-24T18:10:48.017009+00:00"
     },
     {
       "fleet_id": "temps-macbook-pro:clawdbot-repo",
@@ -212,21 +114,7 @@
       "local_path": "/Users/temp/clawdbot-repo",
       "health": "clean",
       "task_id": "993f29f1-725f-4951-8893-05871743f8c3",
-      "updated_at": "2026-07-24T06:13:59.054859+00:00"
-    },
-    {
-      "fleet_id": "temps-macbook-pro:clawdbot-repo",
-      "machine_id": "temps-macbook-pro",
-      "repo": "clawdbot-repo",
-      "branch": "main",
-      "ahead": 0,
-      "behind": 0,
-      "dirty": 0,
-      "last_commit": "c01ead03e chore: shift legacy port mappings to clear active cluster collisions",
-      "local_path": "/Users/temp/clawdbot-repo",
-      "health": "clean",
-      "task_id": "f2cc6291-29f3-4910-a228-2e5d45425d1f",
-      "updated_at": "2026-07-24T17:22:34.09747+00:00"
+      "updated_at": "2026-07-24T18:10:40.234772+00:00"
     },
     {
       "fleet_id": "temps-macbook-pro:clawdbot-stable",
@@ -240,21 +128,7 @@
       "local_path": "/Users/temp/clawdbot-stable",
       "health": "clean",
       "task_id": "84170cf6-8576-4a4c-8c30-cc0223d948e2",
-      "updated_at": "2026-07-24T06:14:00.093328+00:00"
-    },
-    {
-      "fleet_id": "temps-macbook-pro:clawdbot-stable",
-      "machine_id": "temps-macbook-pro",
-      "repo": "clawdbot-stable",
-      "branch": "rescue-clawdbot-stable",
-      "ahead": 0,
-      "behind": 0,
-      "dirty": 0,
-      "last_commit": "8cbcc4661 chore: shift legacy port mappings to clear active cluster collisions",
-      "local_path": "/Users/temp/clawdbot-stable",
-      "health": "clean",
-      "task_id": "1624cf0c-f2e4-464d-acf2-dc9f0847bd5f",
-      "updated_at": "2026-07-24T17:22:34.688892+00:00"
+      "updated_at": "2026-07-24T18:10:41.208261+00:00"
     },
     {
       "fleet_id": "temps-macbook-pro:compute-token-broker",
@@ -268,21 +142,7 @@
       "local_path": "/Users/temp/compute-token-broker",
       "health": "clean",
       "task_id": "4cd643e6-7233-42b1-9a42-b87b67c8b992",
-      "updated_at": "2026-07-24T06:14:03.585296+00:00"
-    },
-    {
-      "fleet_id": "temps-macbook-pro:compute-token-broker",
-      "machine_id": "temps-macbook-pro",
-      "repo": "compute-token-broker",
-      "branch": "main",
-      "ahead": 0,
-      "behind": 0,
-      "dirty": 0,
-      "last_commit": "8083a66 feat: initial local commit with isolated host port configurations",
-      "local_path": "/Users/temp/compute-token-broker",
-      "health": "clean",
-      "task_id": "762e982d-247d-4fb5-868f-ea9ba28f5f3c",
-      "updated_at": "2026-07-24T17:22:37.269778+00:00"
+      "updated_at": "2026-07-24T18:10:43.700957+00:00"
     },
     {
       "fleet_id": "temps-macbook-pro:mcp-gateway",
@@ -296,21 +156,7 @@
       "local_path": "/Users/temp/aether-lab/mcp-gateway",
       "health": "clean",
       "task_id": "1da5112f-e06d-415d-8b10-ca71c6f63a4a",
-      "updated_at": "2026-07-24T06:13:53.793239+00:00"
-    },
-    {
-      "fleet_id": "temps-macbook-pro:mcp-gateway",
-      "machine_id": "temps-macbook-pro",
-      "repo": "mcp-gateway",
-      "branch": "main",
-      "ahead": 0,
-      "behind": 0,
-      "dirty": 0,
-      "last_commit": "69e7dfe feat: add POST /dispatch for orchestrator\u2192worker handoff",
-      "local_path": "/Users/temp/aether-lab/mcp-gateway",
-      "health": "clean",
-      "task_id": "0a4a4a7d-343e-4759-8e4b-b7b7d5571776",
-      "updated_at": "2026-07-24T17:22:30.132302+00:00"
+      "updated_at": "2026-07-24T18:10:36.581716+00:00"
     },
     {
       "fleet_id": "temps-macbook-pro:moltbot-repo",
@@ -324,21 +170,7 @@
       "local_path": "/Users/temp/moltbot-repo",
       "health": "clean",
       "task_id": "69d59a5e-4d00-43dd-9ffb-76b29d818399",
-      "updated_at": "2026-07-24T06:14:01.177527+00:00"
-    },
-    {
-      "fleet_id": "temps-macbook-pro:moltbot-repo",
-      "machine_id": "temps-macbook-pro",
-      "repo": "moltbot-repo",
-      "branch": "main",
-      "ahead": 0,
-      "behind": 0,
-      "dirty": 0,
-      "last_commit": "31ffcac28 chore: shift legacy port mappings to clear active cluster collisions",
-      "local_path": "/Users/temp/moltbot-repo",
-      "health": "clean",
-      "task_id": "983af7cb-ff0c-46f7-8e3f-3f7eb8867e96",
-      "updated_at": "2026-07-24T17:22:35.607309+00:00"
+      "updated_at": "2026-07-24T18:10:42.033198+00:00"
     },
     {
       "fleet_id": "temps-macbook-pro:onboarding-portal",
@@ -352,21 +184,7 @@
       "local_path": "/Users/temp/aether-lab/onboarding-portal",
       "health": "clean",
       "task_id": "f6af556b-b1ee-4df9-9534-c47ece7690f9",
-      "updated_at": "2026-07-24T06:13:52.831489+00:00"
-    },
-    {
-      "fleet_id": "temps-macbook-pro:onboarding-portal",
-      "machine_id": "temps-macbook-pro",
-      "repo": "onboarding-portal",
-      "branch": "main",
-      "ahead": 0,
-      "behind": 0,
-      "dirty": 0,
-      "last_commit": "1f81c37 feat: add fleet health dashboard and OAuth setup documentation",
-      "local_path": "/Users/temp/aether-lab/onboarding-portal",
-      "health": "clean",
-      "task_id": "1e8d1135-9edc-4301-a26a-ceaf25127529",
-      "updated_at": "2026-07-24T17:22:29.506274+00:00"
+      "updated_at": "2026-07-24T18:10:36.109014+00:00"
     },
     {
       "fleet_id": "temps-macbook-pro:openclaw",
@@ -380,21 +198,7 @@
       "local_path": "/Users/temp/openclaw",
       "health": "clean",
       "task_id": "06deb008-377d-4e1a-9228-0fbe15a9ad8f",
-      "updated_at": "2026-07-24T06:13:54.892634+00:00"
-    },
-    {
-      "fleet_id": "temps-macbook-pro:openclaw",
-      "machine_id": "temps-macbook-pro",
-      "repo": "openclaw",
-      "branch": "feature/local-models-searxng",
-      "ahead": 0,
-      "behind": 0,
-      "dirty": 0,
-      "last_commit": "209309be5 feat: add Searxng search provider and local model text-tool-call parsing",
-      "local_path": "/Users/temp/openclaw",
-      "health": "clean",
-      "task_id": "01e36a42-e27a-49be-b912-13f7a681f782",
-      "updated_at": "2026-07-24T17:22:30.947171+00:00"
+      "updated_at": "2026-07-24T18:10:37.396459+00:00"
     },
     {
       "fleet_id": "temps-macbook-pro:openclaw-docker",
@@ -408,21 +212,7 @@
       "local_path": "/Users/temp/openclaw-docker",
       "health": "clean",
       "task_id": "19957e7e-5fa0-421e-b6e0-1cae9126adfa",
-      "updated_at": "2026-07-24T06:13:56.933799+00:00"
-    },
-    {
-      "fleet_id": "temps-macbook-pro:openclaw-docker",
-      "machine_id": "temps-macbook-pro",
-      "repo": "openclaw-docker",
-      "branch": "main",
-      "ahead": 0,
-      "behind": 0,
-      "dirty": 0,
-      "last_commit": "e8a5810 feat: initial local commit with isolated host port configurations",
-      "local_path": "/Users/temp/openclaw-docker",
-      "health": "clean",
-      "task_id": "64ac834e-b33a-4869-8d77-a156e1b12eb4",
-      "updated_at": "2026-07-24T17:22:32.612765+00:00"
+      "updated_at": "2026-07-24T18:10:39.028173+00:00"
     },
     {
       "fleet_id": "temps-macbook-pro:openclaw-patched",
@@ -436,21 +226,7 @@
       "local_path": "/Users/temp/openclaw-patched",
       "health": "clean",
       "task_id": "796ea032-0dd7-4a5d-a429-f2c3061e74a3",
-      "updated_at": "2026-07-24T06:13:56.087386+00:00"
-    },
-    {
-      "fleet_id": "temps-macbook-pro:openclaw-patched",
-      "machine_id": "temps-macbook-pro",
-      "repo": "openclaw-patched",
-      "branch": "main",
-      "ahead": 0,
-      "behind": 0,
-      "dirty": 0,
-      "last_commit": "3a2631782 chore: add MLS scraping tools to openclaw-patched",
-      "local_path": "/Users/temp/openclaw-patched",
-      "health": "clean",
-      "task_id": "1565ffb9-8256-4f1a-871e-9f568db439e7",
-      "updated_at": "2026-07-24T17:22:31.864485+00:00"
+      "updated_at": "2026-07-24T18:10:38.052883+00:00"
     },
     {
       "fleet_id": "temps-macbook-pro:openclaw-standalone",
@@ -464,21 +240,7 @@
       "local_path": "/Users/temp/openclaw-standalone",
       "health": "clean",
       "task_id": "6197dc6a-e04b-4f94-9ea1-072b76ad0e11",
-      "updated_at": "2026-07-24T06:13:57.811134+00:00"
-    },
-    {
-      "fleet_id": "temps-macbook-pro:openclaw-standalone",
-      "machine_id": "temps-macbook-pro",
-      "repo": "openclaw-standalone",
-      "branch": "main",
-      "ahead": 0,
-      "behind": 0,
-      "dirty": 0,
-      "last_commit": "f5834c6 chore: sync local working state",
-      "local_path": "/Users/temp/openclaw-standalone",
-      "health": "clean",
-      "task_id": "5bb0a471-ae91-458f-9473-df07ebc65738",
-      "updated_at": "2026-07-24T17:22:33.343495+00:00"
+      "updated_at": "2026-07-24T18:10:39.644627+00:00"
     },
     {
       "fleet_id": "temps-macbook-pro:overwatch",
@@ -492,21 +254,7 @@
       "local_path": "/Users/temp/overwatch",
       "health": "clean",
       "task_id": "c09b2164-ddc9-4433-b6c4-5a8ec666fbf1",
-      "updated_at": "2026-07-24T06:14:04.536089+00:00"
-    },
-    {
-      "fleet_id": "temps-macbook-pro:overwatch",
-      "machine_id": "temps-macbook-pro",
-      "repo": "overwatch",
-      "branch": "main",
-      "ahead": 0,
-      "behind": 0,
-      "dirty": 0,
-      "last_commit": "aea609a docs: map legacy bots to 18795-18800 port block",
-      "local_path": "/Users/temp/overwatch",
-      "health": "clean",
-      "task_id": "9ba7a914-ecf1-4d58-81bb-570087e46459",
-      "updated_at": "2026-07-24T17:22:37.841742+00:00"
+      "updated_at": "2026-07-24T18:10:44.615416+00:00"
     },
     {
       "fleet_id": "temps-macbook-pro:templarsbbs",
@@ -520,21 +268,7 @@
       "local_path": "/Users/temp/templarsbbs",
       "health": "clean",
       "task_id": "d17635b5-a6a0-4fea-8e08-1ed770970f9d",
-      "updated_at": "2026-07-24T06:14:06.613994+00:00"
-    },
-    {
-      "fleet_id": "temps-macbook-pro:templarsbbs",
-      "machine_id": "temps-macbook-pro",
-      "repo": "templarsbbs",
-      "branch": "main",
-      "ahead": 0,
-      "behind": 0,
-      "dirty": 0,
-      "last_commit": "17b28b6 feat: add swarm brain orchestration hardening and agentcoin migrations",
-      "local_path": "/Users/temp/templarsbbs",
-      "health": "clean",
-      "task_id": "16cc82d0-13f7-401e-bc92-a0009163b914",
-      "updated_at": "2026-07-24T17:22:39.200007+00:00"
+      "updated_at": "2026-07-24T18:10:46.215779+00:00"
     }
   ]
 }
